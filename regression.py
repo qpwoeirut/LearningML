@@ -27,6 +27,7 @@ dataset['Origin'] = dataset['Origin'].map({1: 'USA', 2: 'Europe', 3: 'Japan'})
 dataset = pd.get_dummies(dataset, columns=['Origin'], prefix='', prefix_sep='')
 
 train_dataset = dataset.sample(frac=0.8, random_state=0)
+print(train_dataset.tail())
 test_dataset = dataset.drop(train_dataset.index)
 
 # sns.pairplot(train_dataset[['MPG', 'Cylinders', 'Displacement', 'Weight']], diag_kind='kde')
